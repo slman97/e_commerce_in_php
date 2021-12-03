@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,8 +33,19 @@
         <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
             <p class="font-rale font-size-12 text-black-50 m-0">Jordan Calderon 430-985 Eleifend St. Duluth Washington 92611 (427) 930-5255</p>
             <div class="font-rale font-size-14">
-                <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-                <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
+
+                <?php
+                if (isset($_SESSION['login'])) {
+                    if ($_SESSION['login'] == 1) { ?>
+                        <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
+                        <a href="#" class="px-3 border-right text-dark"><?php echo $_SESSION['email'] ?></a>
+                        <a href="./auth/logout.php" class="px-3 border-right text-dark">Logout</a>
+
+                    <?php }
+                } else { ?>
+                    <a href="login.php" class="px-3 border-right border-left text-dark">Login</a>
+                    <a href="register.php" class="px-3 border-right  text-dark">register</a>
+                <?php } ?>
             </div>
         </div>
 

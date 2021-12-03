@@ -76,8 +76,8 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `register_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -85,9 +85,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Daily', 'Tuition', '2020-03-28 13:07:17'),
-(2, 'Akshay', 'Kashyap', '2020-03-28 13:07:17');
+INSERT INTO `user` (`user_id`, `email`, `password`, `register_date`) VALUES
+(1, 'slman@gmail.com', '1234556789', '2020-03-28 13:07:17'),
+(2, 'ali@gmail.com', '123456789', '2020-03-28 13:07:17');
 
 -- --------------------------------------------------------
 
