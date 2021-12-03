@@ -1,9 +1,7 @@
-<?php
-
-$resultArry = $product->getData();
-?>
-
 <!-- Top Sale -->
+<?php
+shuffle($resultArry);
+?>
 <section id="top-sale">
     <div class="container py-5">
         <h4 class="font-rubik font-size-20">Top Sale</h4>
