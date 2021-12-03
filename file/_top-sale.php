@@ -1,5 +1,6 @@
 <!-- Top Sale -->
 <?php
+$resultArry = $product->getData();
 shuffle($resultArry);
 ?>
 <section id="top-sale">
@@ -11,7 +12,7 @@ shuffle($resultArry);
             <?php foreach ($resultArry as $item) { ?>
                 <div class="item py-2">
                     <div class="product font-rale">
-                        <a href="#"><img src="<?php echo $item['item_image']  ?>" alt="product1" class="img-fluid"></a>
+                        <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image']  ?>" alt="product1" class="img-fluid"></a>
                         <div class="text-center">
                             <h6><?php echo $item['item_name'] ?></h6>
                             <div class="rating text-warning font-size-12">
