@@ -1,4 +1,5 @@
 <?php
+
 class DBcontroller
 {
     protected $host = 'localhost';
