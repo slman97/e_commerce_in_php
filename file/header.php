@@ -1,5 +1,7 @@
 <?php
 session_start();
+$name = $_SESSION['email'];
+$username = strtok($name, '@)');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,7 @@ session_start();
                 if (isset($_SESSION['login'])) {
                     if ($_SESSION['login'] == 1) { ?>
                         <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
-                        <a href="#" class="px-3 border-right text-dark"><?php echo $_SESSION['email'] ?></a>
+                        <a href="<?php printf('%s?%s', 'profile.php', $username); ?>" class="px-3 border-right text-dark"><?php echo $_SESSION['email'] ?></a>
                         <a href="./auth/logout.php" class="px-3 border-right text-dark">Logout</a>
 
                     <?php }

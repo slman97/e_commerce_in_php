@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('function.php');
+include('../function.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 $date = date("y - m - d h : i : s");
@@ -13,7 +13,7 @@ if ($count == 1) {
 } else if (mysqli_query($db->con, $sql) == true) {
     $_SESSION['login'] = 1;
     $_SESSION['email'] = $email;
-    header("Location: index.php");
+    header("Location: ../index.php");
 } else {
     echo "fuckyou";
 }
